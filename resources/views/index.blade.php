@@ -1,3 +1,8 @@
 @extends('layouts.layout')
 
-<x-navbar />
+
+@section('content')
+    
+<p style="margin-top:100vh;"></p>
+@endsection
+

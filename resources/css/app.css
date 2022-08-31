@@ -1,1 +1,19 @@
 @import '~bootstrap/dist/css/bootstrap';
+
+
+
+
+/* NAVBAR */
+
+.navbar-decoration {
+    margin-left: 15%;
+    padding-right: 30px;
+}
+
+.nav-item{
+    margin-right: 50px !important;
+}
+
+.imglogo {
+    width: 100px !important;
+}

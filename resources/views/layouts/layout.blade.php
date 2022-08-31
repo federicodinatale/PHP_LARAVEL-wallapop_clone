@@ -7,12 +7,21 @@
     <title>Document</title>
 
     @vite(['resources/css/app.css'])
+
 </head>
 <body>
 
+    <x-navbar />
+
+    @yield('content')
 
 
-    
+    <x-footer />
+
+
+
+
+
     @vite(['resources/js/app.js'])
 </body>
 </html>
