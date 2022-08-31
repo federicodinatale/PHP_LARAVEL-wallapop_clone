@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div>
 
-            <a class="navbar-brand col-12" href="">
+            <a class="navbar-brand col-12" href=" {{ route("ads.index")}}">
                 <img src="./img/logo.png" alt="logo-img" class="col-12 imglogo" width="5px">
                 <span>Rapido.es </span> 
             </a>
@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse navbar-decoration" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-center">
           <li class="nav-item">
-            <a class="nav-link" href="#">Sube Tu Articulo</a>
+            <a class="nav-link" href=" {{ route("ads.create")}}">Sube Tu Articulo</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,6 +34,29 @@
               <li><a class="dropdown-item" href="#">Diganos una categoria nueva</a></li>
             </ul>
           </li>
+
+
+@guest
+@if (Route::has('login'))
+<li class="nav-item ">
+  <a class="nav-link"
+  href="{{route('login')}}"><span>Login</span></a>
+</li>
+@endif    
+@if (Route::has('register'))
+<li class="nav-item">
+  <a class="nav-link"
+  href="{{route('register')}}"><span>Registrar</span></a>
+</li>
+@endif
+@else
+<li class="nav-item">
+  <form id="logoutForm" action="{{route('logout')}}" method="POST">
+    @csrf
+  </form>
+  <a id="logoutBtn" class="nav-link" href="#">Salir</a>
+</li>
+@endguest
         </ul>
       </div>
     </div>

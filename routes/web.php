@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
-});
+    return view('ads.index');
+}) ->name("ads.index");
+
+
+
+Route::get("/create", function() {
+    return view("ads.create");
+}) -> name("ads.create");
+
