@@ -1,20 +1,24 @@
 <?php
 
 namespace App\Http\Livewire;
+
 use App\Models\Ad;
+// use App\Http\Livewire\Auth;
+
+use Illuminate\Support\Facades\Auth;
+
 use Livewire\Component;
 use App\Models\Category;
+use App\Models\User;
+
 
 class CreateAd extends Component
 {
-
-
 
     public $title;
     public $body;
     public $price;
     public $category;
-
 
     protected $rules = [
         'title'=>'required|min:4',
@@ -22,7 +26,6 @@ class CreateAd extends Component
         'category'=>'required',
         'price'=>'required|numeric',
     ];
-
 
     protected $messages = [
         'required'=>'Field :attribute is required, please fill it',
@@ -35,21 +38,19 @@ class CreateAd extends Component
     {
  
         $category = Category::find($this->category);
-        $category->ads()->create([
+        $ad = $category->ads()->create([
             'title'=>$this->title,
             'body'=>$this->body,
             'price'=>$this->price,
         ]);
 
+        // Auth::user()->ads()->save($ad);
+        Auth::user()->ads()->save($ad);
+
 
         session()->flash('message','Anuncio Creado con éxito');
         $this->cleanForm();
     }
-
-
-
-
-
 
     public function updated($propertyName)
     {
