@@ -23,3 +23,8 @@ Route::get("/create", function() {
     return view("ads.create");
 }) -> name("ads.create");
 
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

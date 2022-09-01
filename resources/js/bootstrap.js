@@ -1,10 +1,10 @@
 import _ from 'lodash';
-
-
-import '../css/app.css'
-import * as bootstrap from 'bootstrap'
-
 window._ = _;
+
+import 'bootstrap';
+
+import * as logout from './logout'
+
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

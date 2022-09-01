@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
+    <div class="container-fluid nav-mobile">
         <div>
 
             <a class="navbar-brand col-12" href=" {{ route("ads.index")}}">
-                <img src="./img/logo.png" alt="logo-img" class="col-12 imglogo" width="5px">
-                <span>Rapido.es </span> 
+                <img src="./img/logo.png" alt="logo-img" class="col-12 imglogo">
+                <span class="title">Rapido.es </span> 
             </a>
 
         </div>
@@ -14,9 +14,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-
       <div class="collapse navbar-collapse navbar-decoration" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-center">
+        <ul class="navbar-nav container-fluid justify-content-around">
           <li class="nav-item">
             <a class="nav-link" href=" {{ route("ads.create")}}">Sube Tu Articulo</a>
           </li>
@@ -25,39 +24,62 @@
               Categorias
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Tecnologías </a></li>
-              <li><a class="dropdown-item" href="#">Muebles </a></li>
-              <li><a class="dropdown-item" href="#">Informatica </a></li>
-              <li><a class="dropdown-item" href="#">Coches </a></li>
+              <div class="row">
+                <div class="col-6 mt-3">
+                <h3 class="text-center catone">Tecnologías</h3>
+                  <li><a class="dropdown-item text-center list-cat" href="#">Mac</a></li>
+                  <li><a class="dropdown-item text-center list-cat" href="#">Hp</a></li>
+                </div>
 
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Diganos una categoria nueva</a></li>
+                <div class="col-6 mt-3">
+                <h3 class="text-center cattwo">Muebles</h3>
+                  <li><a class="dropdown-item text-center list-cat" href="#">Sofa</a></li>
+                  <li><a class="dropdown-item text-center list-cat" href="#">Cama</a></li>
+                </div>
+
+                <div class="col-6 mt-3">
+                <h3 class="text-center catthree">Coches</h3>
+                    <li><a class="dropdown-item text-center list-cat" href="#">Ferrari</a></li>
+                    <li><a class="dropdown-item text-center list-cat" href="#">Fiat</a></li>
+                </div>
+
+              </div>
             </ul>
           </li>
+          </li>
+          
 
 
-@guest
-@if (Route::has('login'))
-<li class="nav-item ">
-  <a class="nav-link"
-  href="{{route('login')}}"><span>Login</span></a>
-</li>
-@endif    
-@if (Route::has('register'))
-<li class="nav-item">
-  <a class="nav-link"
-  href="{{route('register')}}"><span>Registrar</span></a>
-</li>
-@endif
-@else
-<li class="nav-item">
-  <form id="logoutForm" action="{{route('logout')}}" method="POST">
-    @csrf
-  </form>
-  <a id="logoutBtn" class="nav-link" href="#">Salir</a>
-</li>
-@endguest
-        </ul>
-      </div>
-    </div>
-  </nav>
+              @guest
+              @if (Route::has('login'))
+              <li class="nav-item ">
+                <a class="nav-link"
+                href="{{route('login')}}"><span>Login</span></a>
+              </li>
+              @endif    
+              @if (Route::has('register'))
+              <li class="nav-item">
+                <a class="nav-link"
+                href="{{route('register')}}"><span>Registrar</span></a>
+              </li>
+              @endif
+              @else
+              <li class="nav-item">
+                <form id="logoutForm" action="{{route('logout')}}" method="POST">
+                  @csrf
+                </form>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ Auth::user()->name }}
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a id="logoutBtn" class="nav-link">Salir</a></li>
+                  </ul>
+                </li>
+              </li>
+              @endguest
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
