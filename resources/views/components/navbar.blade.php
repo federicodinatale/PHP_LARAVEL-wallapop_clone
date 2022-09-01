@@ -3,7 +3,7 @@
         <div>
 
             <a class="navbar-brand col-12" href=" {{ route("ads.index")}}">
-                <img src="./img/logo.png" alt="logo-img" class="col-12 imglogo">
+                <img src="/img/logo.png" alt="logo-img" class="imglogo">
                 <span class="title">Rapido.es </span> 
             </a>
 
@@ -17,7 +17,9 @@
       <div class="collapse navbar-collapse navbar-decoration" id="navbarSupportedContent">
         <ul class="navbar-nav container-fluid justify-content-around">
           <li class="nav-item">
+            @if (Auth::check())    
             <a class="nav-link" href=" {{ route("ads.create")}}">Sube Tu Articulo</a>
+            @endif
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
