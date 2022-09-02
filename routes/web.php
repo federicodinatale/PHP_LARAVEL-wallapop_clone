@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdController;
+
+use App\Http\Controllers\PublicController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +15,12 @@ use App\Http\Controllers\AdController;
 |
 */
 
-Route::get('/', function () {
-    return view('ads.index');
-}) ->name("ads.index");
+// Route::get('/', function () {
+//     return view('welcome');
+// }) ->name("home");
 
 
+Route::get("/", [PublicController::class, "index"]) ->name("ads.index");
 
 Route::get('/ads/create', [AdController::class,'create'])->name('ads.create');
 
