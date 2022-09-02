@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid nav-mobile">
         <div>
 
@@ -8,6 +8,12 @@
             </a>
 
         </div>
+        <form class="d-flex" role="search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search search-icon" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+          <input class="form-control me-2 search-navbar" type="search" placeholder="Buscar en Todas las categorias" aria-label="Search">
+        </form>
 
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,17 +23,34 @@
       <div class="collapse navbar-collapse navbar-decoration" id="navbarSupportedContent">
         <ul class="navbar-nav container-fluid justify-content-around">
           <li class="nav-item">
+
             @if (Auth::check())    
-            <a class="nav-link" href=" {{ route("ads.create")}}">Sube Tu Articulo</a>
+            <a class="nav-link add-article" href=" {{ route("ads.create")}}"> Sube Tu Articulo</a>
             @endif
+
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categorias
-            </a>
+              <a class="nav-link dropdown-toggle category-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorias
+              </a>
             <ul class="dropdown-menu">
               <div class="row">
-                <div class="col-6 mt-3">
+
+                @php
+                    
+                    $categories = [
+                      'Coches','Motos','Hogar','Electrónica','Móviles','Ordenadores'];
+                @endphp
+
+               @for ($i = 0; $i < count($categories); $i++)
+
+               <div class="col-6 mt-3">
+                <li><a class="dropdown-item text-center list-cat cat{{$i + 1}}" href="#">{{$categories[$i]}}</a></li>
+
+                </div>
+               @endfor
+
+                {{-- <div class="col-6 mt-3">
                 <h3 class="text-center catone">Tecnologías</h3>
                   <li><a class="dropdown-item text-center list-cat" href="#">Mac</a></li>
                   <li><a class="dropdown-item text-center list-cat" href="#">Hp</a></li>
@@ -43,7 +66,7 @@
                 <h3 class="text-center catthree">Coches</h3>
                     <li><a class="dropdown-item text-center list-cat" href="#">Ferrari</a></li>
                     <li><a class="dropdown-item text-center list-cat" href="#">Fiat</a></li>
-                </div>
+                </div> --}}
 
               </div>
             </ul>
@@ -72,11 +95,11 @@
                 </form>
 
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle user-name-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ Auth::user()->name }}
                   </a>
-                  <ul class="dropdown-menu">
-                    <li><a id="logoutBtn" class="nav-link">Salir</a></li>
+                  <ul class="dropdown-menu" id="logout-menu">
+                    <li><button id="logoutBtn" class="nav-link btn btn-outline-danger logout-btn">Salir</button></li>
                   </ul>
                 </li>
               </li>

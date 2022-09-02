@@ -1,9 +1,42 @@
 @import '~bootstrap/dist/css/bootstrap';
 
 
+body {
+    font-family: 'Comic Neue';
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3rem;
+  }
+
+
+  h2 {
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+
+
+
+
 
 
 /* NAVBAR */
+
+nav {
+    
+    font-size: 1.1rem;
+    position: fixed !important;
+    background-color: white;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    -webkit-box-shadow: 5px 15px 24px 1px rgba(0,0,0,0.26); 
+box-shadow: 5px 15px 24px 1px rgba(0,0,0,0.26);
+
+
+}
 
 .imglogo {
     width: 50px !important;
@@ -12,20 +45,72 @@
 
 .title {
     margin-left: 10px;
-    font-size: 1.9rem;
+    font-size: 1.5rem;
+    background-color: #30e4cf;
+    padding: 5px;
+    border-radius: 100px;
 }
+
+.title:hover {
+    border: 2px solid #26c7b4;
+}
+
+
+.search-navbar {
+    width: 60vh;
+    border: 1px solid #26c7b4;
+    border-radius: 80px;
+    background-color: rgb(236, 232, 232);
+    text-indent: 50px;
+}
+
+.search-icon {
+    position: relative;
+    left: 50px;
+    top: 10px
+}
+
+.add-article:hover {
+    border: 1px solid #30e4cf;
+    border-radius: 80px;
+}
+
+.category-nav:hover {
+    border: 1px solid #30e4cf;
+    border-radius: 80px;
+}
+
+
+.user-name-nav {
+    border: 1px solid #30e4cf;
+    border-radius: 80px;
+}
+
+.user-name-nav:hover {
+    background-color: #30e4cf;
+}
+
 
 .dropdown-menu.show {
     width: max-content;
-    left: -50px;
-    margin-top: 50px;
-    background-color: #fff8f0;
-    -webkit-box-shadow: 21px 20px 27px 2px rgba(0,0,0,0.4); 
-    box-shadow: 21px 20px 27px 2px rgba(0,0,0,0.4);
+    left: -300px;
+    -webkit-box-shadow: 5px 20px 27px 2px rgba(231, 231, 231, 0.4); 
+    box-shadow: 5px 5px 27px 2px rgba(231, 231, 231, 0.4);
+} 
+
+#logout-menu {
+    left: 0;
+    border: none !important;
+}
+
+.logout-btn {
+    position: relative;
+    left: 50px
 }
 
 .list-cat:hover {
-    background-color: #fff8f0;
+    background-color: #43ffe9;
+    border-radius: 80px;
 }
 
 
@@ -34,36 +119,127 @@ h3 {
 }
 
 
-.catone {
+.cat1 {
     text-decoration: underline;
     text-underline-offset: 0.6rem;
     text-decoration-color: red;
     
 }
 
-.cattwo {
+.cat2 {
     text-decoration: underline;
     text-underline-offset: 0.6rem;
     text-decoration-color: green;
     
 }
 
-.catthree {
+.cat3 {
     text-decoration: underline;
     text-underline-offset: 0.6rem;
-    text-decoration-color: rgb(124, 0, 128);
-    
+    text-decoration-color: rgb(124, 0, 128); 
 }
 
+.cat4 {
+    text-decoration: underline;
+    text-underline-offset: 0.6rem;
+    text-decoration-color: rgb(2, 0, 128); 
+}
+
+.cat5 {
+    text-decoration: underline;
+    text-underline-offset: 0.6rem;
+    text-decoration-color: rgb(0, 128, 28); 
+}
+
+.cat6 {
+    text-decoration: underline;
+    text-underline-offset: 0.6rem;
+    text-decoration-color: rgb(128, 119, 0); 
+}
+/* 
 a:hover {
-    text-shadow: 12px 12px 17px rgba(49,21,13,0.76);
+    text-shadow: 12px 12px 17px #43ffe9;
+} */
+
+
+
+
+
+
+  /* HOMEPAGE */
+
+  /* title */
+
+  .title-secondary {
+      color: darkgray;
+      font-family: 'Comic Neue', "cursive";
+      margin-top: 100px;
+
+  }
+
+
+  /* CARDS CATEGORIES */
+
+    .card-categories {
+        position: relative;
+        width: 125px;
+        height: 155px;
+    }
+  .card-categories:hover {
+    
+    -webkit-box-shadow: 1px 9px 21px -3px rgba(0,0,0,0.39); 
+    box-shadow: 1px 9px 21px -3px rgba(0,0,0,0.39);
+
+    border-radius: 10px;
+  }
+
+
+  /* BANNER PRO */
+
+  .banner-pro {
+      background-color: #385EF9;
+      height:max-content;
+      
+  }
+
+
+  .pro-banner-text {
+      font-size: 1.5rem;
+  }
+  
+
+  .btn-pro-banner {
+    background-color: #26c7b4 ;
+    font-weight: bold;  
+    border-radius: 80px;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+   
+
+  }
+
+
+
+
+
+
+
+
+  @media screen and (max-width: 1175px) {
+    .search-navbar {
+        width: 50vh;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .search-navbar {
+        width: 40vh;
+    }
 }
 
 
 
-
-
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 900px) {
     .nav-mobile {
         display: flex;
         flex-wrap: nowrap;
@@ -75,5 +251,14 @@ a:hover {
         .navbar-toggler {
             margin-top: 10px;
         }
-    
+
+        .search-navbar {
+            width: 50vh;
+        }
+
+        .banner-pro-img {
+            display: none;
+        }
+
+
   }
