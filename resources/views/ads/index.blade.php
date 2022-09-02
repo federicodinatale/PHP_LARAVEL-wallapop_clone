@@ -131,8 +131,6 @@
   @endforelse
 </div>
 
-
-
   
 
 </x-layout>

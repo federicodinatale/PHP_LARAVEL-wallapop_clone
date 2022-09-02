@@ -8,6 +8,7 @@ body {
 h1 {
     font-weight: bold;
     font-size: 3rem;
+    margin-top: 100px;
   }
 
 
@@ -15,9 +16,6 @@ h1 {
     font-weight: bold;
     font-size: 2.5rem;
   }
-
-
-
 
 
 
@@ -156,14 +154,6 @@ h3 {
     text-underline-offset: 0.6rem;
     text-decoration-color: rgb(128, 119, 0); 
 }
-/* 
-a:hover {
-    text-shadow: 12px 12px 17px #43ffe9;
-} */
-
-
-
-
 
 
   /* HOMEPAGE */
@@ -175,6 +165,12 @@ a:hover {
       font-family: 'Comic Neue', "cursive";
       margin-top: 100px;
 
+  }
+
+  .title-underline {
+      text-decoration: underline;
+      text-decoration-color: #26c7b4;
+      padding: 5px;
   }
 
 
@@ -264,7 +260,7 @@ a:hover {
   }
 
 
-nav[role=navigation] {
-    position: relative !important;
-    top: -800px;
-}
+/* nav[role=navigation] {
+    position: fixed !important;
+    top: 70px;
+} */
