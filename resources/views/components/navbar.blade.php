@@ -36,7 +36,16 @@
             <ul class="dropdown-menu">
               <div class="row">
 
-                @php
+
+    @foreach ($categories as $category)
+
+    <div class="col-6 mt-3">
+      <li><a class="dropdown-item text-center list-cat cat{{$loop->iteration}}" href="{{route('category.ads',$category)}}">{{$category->name}}</a></li>
+
+      </div>
+    @endforeach
+
+                {{-- @php
                     
                     $categories = [
                       'Coches','Motos','Hogar','Electrónica','Móviles','Ordenadores'];
@@ -48,7 +57,7 @@
                 <li><a class="dropdown-item text-center list-cat cat{{$i + 1}}" href="#">{{$categories[$i]}}</a></li>
 
                 </div>
-               @endfor
+               @endfor --}}
 
                 {{-- <div class="col-6 mt-3">
                 <h3 class="text-center catone">Tecnologías</h3>
