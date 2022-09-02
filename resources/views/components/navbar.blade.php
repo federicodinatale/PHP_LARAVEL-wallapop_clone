@@ -36,46 +36,13 @@
             <ul class="dropdown-menu">
               <div class="row">
 
+                  @foreach ($categories as $category)
 
-    @foreach ($categories as $category)
+                  <div class="col-6 mt-3">
+                    <li><a class="dropdown-item text-center list-cat cat{{$loop->iteration}}" href="{{route('category.ads',$category)}}">{{$category->name}}</a></li>
 
-    <div class="col-6 mt-3">
-      <li><a class="dropdown-item text-center list-cat cat{{$loop->iteration}}" href="{{route('category.ads',$category)}}">{{$category->name}}</a></li>
-
-      </div>
-    @endforeach
-
-                {{-- @php
-                    
-                    $categories = [
-                      'Coches','Motos','Hogar','Electrónica','Móviles','Ordenadores'];
-                @endphp
-
-               @for ($i = 0; $i < count($categories); $i++)
-
-               <div class="col-6 mt-3">
-                <li><a class="dropdown-item text-center list-cat cat{{$i + 1}}" href="#">{{$categories[$i]}}</a></li>
-
-                </div>
-               @endfor --}}
-
-                {{-- <div class="col-6 mt-3">
-                <h3 class="text-center catone">Tecnologías</h3>
-                  <li><a class="dropdown-item text-center list-cat" href="#">Mac</a></li>
-                  <li><a class="dropdown-item text-center list-cat" href="#">Hp</a></li>
-                </div>
-
-                <div class="col-6 mt-3">
-                <h3 class="text-center cattwo">Muebles</h3>
-                  <li><a class="dropdown-item text-center list-cat" href="#">Sofa</a></li>
-                  <li><a class="dropdown-item text-center list-cat" href="#">Cama</a></li>
-                </div>
-
-                <div class="col-6 mt-3">
-                <h3 class="text-center catthree">Coches</h3>
-                    <li><a class="dropdown-item text-center list-cat" href="#">Ferrari</a></li>
-                    <li><a class="dropdown-item text-center list-cat" href="#">Fiat</a></li>
-                </div> --}}
+                    </div>
+                  @endforeach
 
               </div>
             </ul>

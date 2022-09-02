@@ -22,7 +22,7 @@
               <div class="card-subtitle mb-2">
                   <small>{{ $ad->user->name }}</small>
               </div> 
-              <a href="#" class="btn btn-primary">Mostrar Más</a>
+              <a href="{{ route("ads.show", $ad)}}" class="btn btn-primary">Mostrar Más</a>
           </div>
       </div>
   </div>
@@ -33,6 +33,15 @@
     </div>
   @endforelse
 </div>
+
+{{-- <div class="paginate" id="page">
+    {{$ads->links()}}
+</div> --}}
+
+{{$ads->links()}}
+
+
+
 
 
   
