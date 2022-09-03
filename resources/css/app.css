@@ -3,12 +3,13 @@
 
 body {
     font-family: 'Comic Neue';
+    background-color: #EDEFF1;
 }
 
 h1 {
     font-weight: bold;
     font-size: 3rem;
-    margin-top: 100px;
+    margin: 150px 0px 50px 50px;
   }
 
 
@@ -216,8 +217,59 @@ h3 {
 
 
 
+  /* PAGE BY CATEGORY */
 
 
+
+  /* SEARCH BAR */
+
+  .btn-search-cat {
+      background-color: #26c7b4;
+      padding: 9px 15px;
+      color: white;
+      width:400px;
+      border-radius: 80px;
+      font-size: 1.2rem;
+  }
+
+  .btn-search-cat:hover {
+    background-color: #86ccc4;
+    border: #22af9e;
+    color: antiquewhite;
+  }
+
+
+  .search-navbar-cat {
+      height: 100px;
+  }
+  /* LINK */
+
+
+  .bg-paginate {
+      background-color: #26c7b4;
+      color: antiquewhite;
+      font-weight: bold;
+  }
+
+
+  .bg-paginate:hover {
+      color: white;
+      background-color: #22af9e;
+  }
+
+
+.bg-paginate:active {
+    box-shadow: 2px 1px 1px #22af9e;
+
+}
+  .bg-paginate:focus {
+    box-shadow: 1px 1px 1px #22af9e;
+}
+
+.bg-paginate-disabled {
+    font-weight: bold;
+    background-color: beige !important;
+}
 
 
 
@@ -259,8 +311,3 @@ h3 {
 
   }
 
-
-/* nav[role=navigation] {
-    position: fixed !important;
-    top: 70px;
-} */
